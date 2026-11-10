@@ -1,2 +1,47 @@
 /* The first line of your stylesheet **must** be your first name and your GSI. Add your name and GSI's name as a comment! */
 
+/* Name: Leslie L */
+/* GSI: Beck */
+
+.gallery {
+    width: 85%;
+    margin: auto;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(3, 24%);
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.gallery img {
+    width: 100%;
+    box-sizing: border-box;
+    border: 5px dashed orange;
+}
+
+@media screen and (min-width: 550px) {
+    .gallery {
+        background-color: white;
+        gap: 5px;
+        justify-content: space-evenly;
+        align-items: start;
+    }
+
+    .gallery img:nth-child(4n) {
+        grid-column: 1 / -1;
+    }
+
+    .gallery img:nth-child(even) {
+        border-color: black;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .gallery {
+        background-color: orange;
+        grid-template-columns: repeat(4, 18%);
+    }
+    .gallery img:nth-child(odd) {
+        border-color: 5px solid white;
+    }
+}
